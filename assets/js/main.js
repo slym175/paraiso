@@ -102,101 +102,115 @@
     nav: false,
     loop: true,
     autoHeight: true,
-    autoplaySpeed: 2000,
-    autoplayHoverPause: true,
-    onInitialized: function(el) {
-      console.log(el);
-    },
-    onChanged: function(el) {
-      console.log(el);
-      if(el.item.index % (el.item.count+2) == 0) {
-        jQuery('.news_container').css('margin-top', '100px');
-      }else{
-        jQuery('.news_container').css('margin-top', '-100px');
-      }
-    }
+  });
+
+  jQuery('.lib_carousel').owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: false,
+    dots: false,
+    items: 2,
+    autoWidth: true,
+    center: true,
+    // responsive:{
+    //     0:{
+    //         items:1
+    //     },
+    //     600:{
+    //         items:3
+    //     },
+    //     1000:{
+    //         items:2
+    //     }
+    // }
+  });
+
+  jQuery('.news_carousel').owlCarousel({
+    loop: true,
+    nav: false,
+    dots: true,
+    items: 3,
   });
 
   var sync1 = jQuery("#carousel-1");
-    var sync2 = jQuery("#carousel-2");
-    var slidesPerPage = 5; 
-    var syncedSecondary = true;
+  var sync2 = jQuery("#carousel-2");
+  var slidesPerPage = 5;
+  var syncedSecondary = true;
 
-    sync1.owlCarousel({
-        items: 1,
-        responsive : {
-            768 : {
-                items : 2,
-            }
-        },
-        slideSpeed: 2000,
-        nav: false,
-        dots: false,
-        autoWidth: true,
-        loop: true,
-        responsiveRefreshRate: 200,
-        onChanged: syncPosition,
-    });
-
-    sync2.owlCarousel({
-        items: 7,
-        margin: 8,
-        dots: false,
-        nav: false,
-        autoWidth: true,
-        smartSpeed: 200,
-        slideSpeed: 500,
-        slideBy: slidesPerPage,
-        responsiveRefreshRate: 100,
-        onInitialized: function() {
-            sync2.find(".owl-item").eq(0).addClass("synced");
-        },
-        onChanged: syncPosition2
-    });
-
-    function syncPosition(el) {
-        var count = el.item.count - 1;
-        var current = Math.round(el.item.index - (el.item.count / 2) - .5);
-
-        if (current < 0) {
-            current = count;
-        }
-        if (current > count) {
-            current = 0;
-        }
-        //end block
-        
-        sync2.find(".owl-item").removeClass("synced").eq(current).addClass("synced");
-        sync2.trigger('to.owl.carousel', [current, 100, true]);
-    }
-
-    function syncPosition2(el) {
-        if (syncedSecondary) {
-            var number = el.item.index;
-            sync1.trigger('to.owl.carousel', [number, 100, true]);
-        }
-    }
-
-    sync2.on("click", ".owl-item", function(e) {
-        e.preventDefault();
-        var number = jQuery(this).index();
-        sync1.trigger('to.owl.carousel', [number, 100, true]);
-    });
-
-    jQuery('.btn-app').hover(function () {
-        jQuery('.btn-app img').attr('src', './assets/img/long-arrow-right.svg')
-      }, function () {
-        jQuery('.btn-app img').attr('src', './assets/img/long-arrow-right-white.svg')
+  sync1.owlCarousel({
+    items: 1,
+    responsive: {
+      768: {
+        items: 2,
       }
-    );
+    },
+    slideSpeed: 2000,
+    nav: false,
+    dots: false,
+    autoWidth: true,
+    loop: true,
+    responsiveRefreshRate: 200,
+    onChanged: syncPosition,
+  });
 
-    jQuery('.btn-app').focus(function () {
-      var src = jQuery('.btn-app img').attr('src') = './assets/img/long-arrow-right.svg' ? './assets/img/long-arrow-right-white.svg' : './assets/img/long-arrow-right.svg';
-      jQuery('.btn-app img').attr('src', src);
-    });
+  sync2.owlCarousel({
+    items: 7,
+    margin: 8,
+    dots: false,
+    nav: false,
+    autoWidth: true,
+    smartSpeed: 200,
+    slideSpeed: 500,
+    slideBy: slidesPerPage,
+    responsiveRefreshRate: 100,
+    onInitialized: function () {
+      sync2.find(".owl-item").eq(0).addClass("synced");
+    },
+    onChanged: syncPosition2
+  });
 
-    jQuery('.langs-switch').click( function(e) {
-      e.preventDefault();
-      jQuery('.langs-selector').toggleClass('d-none');
-    })  
+  function syncPosition(el) {
+    var count = el.item.count - 1;
+    var current = Math.round(el.item.index - (el.item.count / 2) - .5);
+
+    if (current < 0) {
+      current = count;
+    }
+    if (current > count) {
+      current = 0;
+    }
+    //end block
+
+    sync2.find(".owl-item").removeClass("synced").eq(current).addClass("synced");
+    sync2.trigger('to.owl.carousel', [current, 100, true]);
+  }
+
+  function syncPosition2(el) {
+    if (syncedSecondary) {
+      var number = el.item.index;
+      sync1.trigger('to.owl.carousel', [number, 100, true]);
+    }
+  }
+
+  sync2.on("click", ".owl-item", function (e) {
+    e.preventDefault();
+    var number = jQuery(this).index();
+    sync1.trigger('to.owl.carousel', [number, 100, true]);
+  });
+
+  jQuery('.btn-app').hover(function () {
+    jQuery('.btn-app img').attr('src', './assets/img/long-arrow-right.svg')
+  }, function () {
+    jQuery('.btn-app img').attr('src', './assets/img/long-arrow-right-white.svg')
+  });
+
+  jQuery('.btn-app').focus(function () {
+    var src = jQuery('.btn-app img').attr('src') = './assets/img/long-arrow-right.svg' ? './assets/img/long-arrow-right-white.svg' : './assets/img/long-arrow-right.svg';
+    jQuery('.btn-app img').attr('src', src);
+  });
+
+  jQuery('.langs-switch').click(function (e) {
+    e.preventDefault();
+    jQuery('.langs-selector').toggleClass('d-none');
+  })
 })(jQuery);
