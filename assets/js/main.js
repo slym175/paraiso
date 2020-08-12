@@ -213,4 +213,11 @@
     e.preventDefault();
     jQuery('.langs-selector').toggleClass('d-none');
   })
+
+  jQuery('.events_carousel').owlCarousel({
+    items: 3,
+    margin: 32,
+    dots: true,
+    nav: false,
+  });
 })(jQuery);
