@@ -220,4 +220,27 @@
     dots: true,
     nav: false,
   });
+
+  var swiper = new Swiper('.swiper-container.video_gallery_slider', {
+    slidesPerView: 3,
+    slidesPerColumn: 2,
+    slidesPerGroup: 6,
+    spaceBetween: 30,
+    pagination: {
+      el: '.vg_pagination',
+      clickable: true,
+    },
+  });
+
+  var swiper = new Swiper('.swiper-container.image_gallery_slider', {
+    slidesPerView: 3,
+    slidesPerColumn: 2,
+    slidesPerGroup: 6,
+    spaceBetween: 30,
+    pagination: {
+      el: '.ig_pagination',
+      clickable: true,
+    },
+  });
+
 })(jQuery);
