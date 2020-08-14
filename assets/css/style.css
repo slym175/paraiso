@@ -592,32 +592,6 @@ input:focus {
     display: none;
 }
 
-.btn-langs .langs-selector {
-    position: absolute;
-    right: 0;
-    bottom: -45px;
-    padding: 6px;
-    background-color: #fff;
-    z-index: 100;
-}
-
-.btn-langs .langs-selector .nav-lang {
-    margin-bottom: 6px;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-}
-
-.btn-langs .langs-selector .nav-lang:last-child {
-    margin-bottom: 0;
-}
-
-.btn-langs .langs-selector .nav-lang span {
-    color: #000;
-    font: normal normal 14px/18px SVN_Miller_Banner;
-    margin-left: 8px;
-}
-
 @media only screen and (max-width: 991px) {
     .btn-search {
         margin-left: unset;
@@ -2459,10 +2433,15 @@ textarea {
 /* End gallery */
 
 /* Contact */
+.contact_section {
+    padding-bottom: 68px;
+}
+
 .contact_section .c_form {
     position: relative;
     height: 100%;
     display: flex;
+    padding-right: 4rem;
     flex-direction: column;
     justify-content: center;
 }
@@ -2484,7 +2463,12 @@ textarea {
     border-image: radial-gradient(97.41% 8737911.81% at 1.34% 100%, #FFD1A8 0%, #B77941 100%);
     border-image-slice: 1;
     width: 100%;
-    margin-bottom: 24px;
+    margin-bottom: 18px;
+}
+
+.map iframe{
+    width: 100%;
+    margin-bottom: 45px;
 }
 
 .contact_section .c_form .subscribing_form .sf_input:focus::placeholder {
@@ -2521,6 +2505,53 @@ textarea {
     font-size: 17px;
 }
 
+.contact_section .c_info {
+    padding: 15px 50px;
+    background-image: url(../img/back.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+    font: normal normal 16px/18px 'Times New Roman';
+    color: #FFFFFF;
+    position: relative;
+}
+
+.contact_section .c_info::before {
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-color: rgba(30, 49, 75, 0.3);
+    top: -20px;
+    left: -20px;
+}
+
+.contact_section .c_info::after {
+    position: absolute;
+    content: "";
+    width: 185px;
+    height: 163px;
+    background-color: #032452;
+    right: -53px;
+    bottom: -46px;
+    z-index: -1;
+}
+
+.contact_section .c_info .logo {
+    margin-bottom: 6px;
+    margin-left: 35px;
+}
+
+.contact_section .c_info .img_con{
+    width: 29px;
+    text-align: center;
+}
+
+.contact_section .c_info h2 {
+    font: normal bold 30px/37px Helvetica;
+    color: #FFFFFF;
+    margin-bottom: 45px;
+}
 /* End Contact */
 
 .section_under_title {
@@ -2542,7 +2573,7 @@ textarea {
 /* start footer */
 footer {
     padding-top: 20px;
-    border-top: 1px solid rgba(229, 0, 1, 0.7);
+    border-top: 1px solid rgba(229, 0, 1, 0.2);
 }
 
 .bg_footer {
