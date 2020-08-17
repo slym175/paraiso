@@ -130,6 +130,17 @@
     nav: false,
     dots: true,
     items: 3,
+    responsive: {
+      992: {
+        items: 3,
+      },
+      576: {
+        items: 2,
+      },
+      0: {
+        items: 1,
+      }
+    }
   });
 
   var sync1 = jQuery("#carousel-1");

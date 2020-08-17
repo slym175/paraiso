@@ -571,8 +571,8 @@ input:focus {
 .btn-langs {
     position: absolute;
     bottom: 0;
-    right: 0;
-    padding-bottom: 2.1rem;
+    right: 2.5rem;
+    padding-bottom: 2.5rem;
 }
 
 .btn-langs .langs-switch {
@@ -1034,7 +1034,48 @@ input:focus {
     line-height: 32px;
     margin-bottom: 18px;
     width: 55%;
+    color: #fff;
 }
+
+@media (min-width: 1200px) and (max-width: 1419px) {
+    .news_container .news_info .ni_title {
+        width: 70%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .news_container .news_info .ni_title {
+        width: 90%;
+    }
+} 
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .news_container .news_info .ni_title {
+        width: 80%;
+    }
+} 
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .news_container .news_info .ni_title {
+        width: 80%;
+    }
+} 
+
+@media (max-width: 575px) {
+    .news_container .news_info {
+        padding: 3rem 1.5rem;
+    }
+
+    .news_container .news_info .ni_title {
+        width: 75%;
+    }
+} 
+
+@media (max-width: 410px) {
+    .news_container .news_info .ni_title {
+        width: 100%;
+    }
+} 
 
 .news_container .news_info .ni_content {
     font: normal normal 16px/18px 'Times New Roman';
@@ -1058,6 +1099,9 @@ input:focus {
     color: #fff;
 }
 
+.news_container .news_info .ni_breadcrumb .breadcrumb-item a{
+    color: #fff;
+}
 /* end slider */
 
 .short_intro {
@@ -1088,11 +1132,34 @@ input:focus {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    position: relative;
+}
+
+.si_contents nav {
+    position: relative;
+    width: 285px;
+}
+
+@media (max-width: 767px) {
+    .si_contents nav {
+        position: relative;
+        width: 100%;
+    }
+}
+
+.si_contents nav::before {
+    content: "";
+    position: absolute;
+    top: 16px;
+    right: 0;
+    width: calc(100% - 130px);
+    height: 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .short_intro .si_container .si_contents .sic_title {
     font: normal normal 48px/65px SVN_Miller_Banner;
-    margin-bottom: 21px;
+    margin-bottom: 16px;
     text-transform: uppercase;
 }
 
@@ -1106,7 +1173,9 @@ input:focus {
 
 .short_intro .si_container .si_content {
     font: normal normal 16px/22px SVN_Miller_Banner;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+    width: 285px;
+    text-align: justify;
 }
 
 .short_intro .si_container .si_contents .si_breadcrumb {
@@ -1115,7 +1184,6 @@ input:focus {
     color: #fff;
     padding-left: unset;
     padding-right: unset;
-    margin-top: 18px;
 }
 
 .short_intro .si_container .si_contents .si_breadcrumb .breadcrumb-item a {
@@ -1147,31 +1215,34 @@ input:focus {
 @media only screen and (max-width: 575px) {
     .short_intro::before {
         content: "";
-        position: absolute;
         width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: url(../img/tc_news_bg.png) no-repeat;
-        background-size: 100% 100%;
     }
 
     .short_intro .si_container .si_contents {
         padding-left: 1.5rem !important;
         padding-right: 1.5rem !important;
     }
+
+    .short_intro .si_container .si_content {
+        width: 100%;
+    }
 }
 
-@media only screen and (min-width: 576px) and (max-width: 991px) {
+@media only screen and (min-width: 576px) and (max-width: 767px) {
     .short_intro::before {
         content: "";
-        position: absolute;
         width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: url(../img/tc_news_bg.png) no-repeat;
-        background-size: 100% 100%;
+    }
+
+    .short_intro .si_container .si_content {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .short_intro::before {
+        content: "";
+        width: 50%;
     }
 }
 
@@ -1352,6 +1423,8 @@ input:focus {
 .policies img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
 }
 
 .policies .p_body {
@@ -1359,7 +1432,10 @@ input:focus {
     background-size: 100% 100%;
     height: 100%;
     width: 100%;
-    padding: 70px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .policies .p_body h4 {
@@ -1380,6 +1456,40 @@ input:focus {
 textarea {
     resize: none;
 }
+
+/* tien ich */
+.util_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 7px;
+}
+
+.util_list .util_item {
+    position: relative;
+}
+
+.util_list .util_item img{
+    width: 100%;
+}
+
+.util_list .util_item h6{
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #161616;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 0;
+    padding: 5px;
+    font: normal normal 18px/21px 'Times New Roman';
+}
+
+.util_list .util_item:nth-child(6n-5) {
+    grid-column: 1 / span 2;
+}
+/* end tien ich */
 
 /* dang ky nhan tin */
 .subscribing h3 {
