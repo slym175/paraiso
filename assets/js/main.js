@@ -220,6 +220,13 @@
     dots: true,
     nav: false,
   });
+  
+  jQuery('.m_branch').click(function(e) {
+    e.preventDefault();
+    console.log('hello');
+    jQuery('.bra .branch:nth-child(n+2)').css('display', 'flex');
+    jQuery(this).css('display', 'none');
+  });
 
   var swiper = new Swiper('.swiper-container.video_gallery_slider', {
     slidesPerView: 3,
@@ -242,5 +249,4 @@
       clickable: true,
     },
   });
-
 })(jQuery);
