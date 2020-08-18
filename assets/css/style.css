@@ -938,7 +938,7 @@ input:focus {
 .banner_area .banner_text {
     position: absolute;
     width: 100%;
-    top: 50%;
+    top: 40%;
     left: 0;
     text-align: center;
     transform: translate(0, -50%);
@@ -954,10 +954,26 @@ input:focus {
     color: #FFFFFF;
 }
 
+.newest_news {
+    position: relative;
+}
+
+.newest_news::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 0;
+    height: 400px;
+    width: 100%;
+    background-image: url(../img/van3.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
 .news_container {
     margin-top: -100px;
     background-color: #fff;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
 }
 
 @media only screen and (min-width: 578px) and (max-width: 991px) {
@@ -1009,6 +1025,17 @@ input:focus {
 .news_container .news_image {
     object-position: 50% 50%;
     object-fit: cover;
+    position: relative;
+}
+
+.news_container .news_image::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 46px;
+    height: 0;
+    width: 95%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .news_container .news_image img {
@@ -1032,14 +1059,15 @@ input:focus {
     font: normal normal 14px/16px 'Times New Roman';
     margin-bottom: 26px;
     position: relative;
+    margin-top: 6px;
 }
 
 .news_container .news_info .ni_created_at::after {
     content: "";
     position: absolute;
-    bottom: 2px;
+    bottom: 4px;
     right: 0;
-    width: 60%;
+    width: calc(100% - 152px);
     height: 1px;
     background-color: #fff;
     opacity: 0.5;
@@ -1048,9 +1076,9 @@ input:focus {
 .news_container .news_info .ni_created_at::before {
     content: "";
     position: absolute;
-    bottom: 2px;
+    bottom: 4px;
     left: -9rem;
-    width: 5rem;
+    width: 6rem;
     height: 3px;
     background-color: #fff;
     opacity: 0.5;
@@ -1378,7 +1406,7 @@ input:focus {
 }
 
 .news .news_carousel .item .nc_img_container {
-    height: 200px;
+    height: 202px;
     width: 100%;
     display: block;
     overflow: hidden;
