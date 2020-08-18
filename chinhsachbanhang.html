@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="./assets/css/nice-select.css">
     <link rel="stylesheet" href="./assets/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./assets/css/swiper.min.css">
+    <link rel="stylesheet" href="./assets/css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -126,41 +128,39 @@
                     <div class="col-12">
                         <h3>ĐĂNG KÝ NHẬN THÔNG TIN MUA HÀNG</h3>
                     </div>
-                    <div class="col-5 p-0">
-                        <div class="s_img_container">
-                            <img src="./assets/img/r1.png" alt="Subscribing Image">
-                        </div>
+                </div>
+                <div class="row sub">
+                    <div class="s_img_container">
+                        <img src="./assets/img/r1.png" alt="Subscribing Image">
                     </div>
-                    <div class="col-7 p-0">
-                        <div class="s_form">
-                            <p>Vui lòng gửi thông tin bạn quan tâm về dự án của Paraiso City, tư vấn viên của chúng tôi
-                                sẽ liên hệ với bạn trong thời gian sớm nhất. Chân thành cảm ơn!</p>
-                            <form action="" method="post" class="subscribing_form">
-                                <input class="sf_input" type="text" name="name" placeholder="Họ và tên">
-                                <div class="sf_input_row">
-                                    <input class="sf_input" type="text" name="name" placeholder="Số điện thoại">
-                                    <input class="sf_input" type="text" name="name" placeholder="Email">
+                    <div class="s_form">
+                        <p>Vui lòng gửi thông tin bạn quan tâm về dự án của Paraiso City, tư vấn viên của chúng tôi
+                            sẽ liên hệ với bạn trong thời gian sớm nhất. Chân thành cảm ơn!</p>
+                        <form action="" method="post" class="subscribing_form">
+                            <input class="sf_input" type="text" name="name" placeholder="Họ và tên">
+                            <div class="sf_input_row">
+                                <input class="sf_input" type="text" name="name" placeholder="Số điện thoại">
+                                <input class="sf_input" type="text" name="name" placeholder="Email">
+                            </div>
+                            <strong>Chọn sản phẩm bạn quan tâm:</strong>
+                            <div class="sf_checkbox_row">
+                                <div class="sf_checkbox">
+                                    <input class="d-none" type="checkbox" name="prod" id="prod1">
+                                    <label class="sf_check_label" for="prod1">Nhà phố thương mại shophouse</label>
                                 </div>
-                                <strong>Chọn sản phẩm bạn quan tâm:</strong>
-                                <div class="sf_checkbox_row">
-                                    <div class="sf_checkbox">
-                                        <input class="d-none" type="checkbox" name="prod" id="prod1">
-                                        <label class="sf_check_label" for="prod1">Nhà phố thương mại shophouse</label>
-                                    </div>
-                                    <div class="sf_checkbox">
-                                        <input class="d-none" type="checkbox" name="prod" id="prod2">
-                                        <label class="sf_check_label" for="prod2">Căn hộ cho thuê</label>
-                                    </div>
-                                    <div class="sf_checkbox">
-                                        <input class="d-none" type="checkbox" name="prod" id="prod3">
-                                        <label class="sf_check_label" for="prod3">Trung tâm thương mại</label>
-                                    </div>
+                                <div class="sf_checkbox">
+                                    <input class="d-none" type="checkbox" name="prod" id="prod2">
+                                    <label class="sf_check_label" for="prod2">Căn hộ cho thuê</label>
                                 </div>
-                                <div class="sf_button">
-                                    <button class="sf_submit" type="submit">Đăng ký</button>
+                                <div class="sf_checkbox">
+                                    <input class="d-none" type="checkbox" name="prod" id="prod3">
+                                    <label class="sf_check_label" for="prod3">Trung tâm thương mại</label>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                            <div class="sf_button">
+                                <button class="sf_submit" type="submit">Đăng ký</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -185,82 +185,90 @@
         <div class="footer-area bg_footer line">
             <div class="container">
                 <div class="row">
-                    <div class="col-3 address">
-                        <a href="trangchu.html">
-                            <img src="./assets/img/f_logo.png" alt="Logo">
-                        </a>
-                        <p class="addr">Phường Khai Quang <br> TP Vĩnh Yên, Vĩnh Phúc</p>
-                        <div class="phone">
-                            <img src="./assets/img/i_contact.png" alt="Icon">
-                            <a href="tel:0833608686">0833 60 8686</a>
+                    <div class="col-xl-8 col-lg-7 col-md-6 col-12">
+                        <div class="row">
+                            <div class="col-lg-5 col-12 address">
+                                <a href="trangchu.html">
+                                    <img src="./assets/img/f_logo.png" alt="Logo">
+                                </a>
+                                <div class="df">
+                                    <p class="addr">Phường Khai Quang <br> TP Vĩnh Yên, Vĩnh Phúc</p>
+                                    <div class="phone">
+                                        <img src="./assets/img/i_contact.png" alt="Icon">
+                                        <a href="tel:0833608686">0833 60 8686</a>
+                                    </div>
+                                    <a class="f_social" href="https://fb.com/paraisocityvinhphuc">fb.com/paraisocityvinhphuc</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-12 mt-lg-0 mt-5 branchs">
+                                <h4>Đại lý <a href="#" class="m_branch"><i class="fa fa-chevron-down"></i></a></h4>
+                                <div class="bra">
+                                    <div class="branch">
+                                        <img src="./assets/img/marker.png" alt="Icon">
+                                        <div>
+                                            <h6>Công ty TNHH Tư vấn Đầu tư Xây dựng và Thương mại quốc tế TD</h6>
+                                            <a href="tel:0934303668"
+                                                title="Công ty TNHH Tư vấn Đầu tư Xây dựng và Thương mại quốc tế TD">0934303668</a>
+                                        </div>
+                                    </div>
+                                    <div class="branch">
+                                        <img src="./assets/img/marker.png" alt="Icon">
+                                        <div>
+                                            <h6>Công ty CP Dầu tư và Phân phối Minh Phương</h6>
+                                            <a href="tel:0913268868"
+                                                title="Công ty CP Dầu tư và Phân phối Minh Phương">0913268868</a>
+                                        </div>
+                                    </div>
+                                    <div class="branch">
+                                        <img src="./assets/img/marker.png" alt="Icon">
+                                        <div>
+                                            <h6>Công ty CP Recbook</h6>
+                                            <a href="tel:0989186179" title="Công ty CP Recbook">0989186179</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <a class="f_social" href="https://fb.com/paraisocityvinhphuc">fb.com/paraisocityvinhphuc</a>
                     </div>
-                    <div class="col-5 branchs">
-                        <h4>Đại lý</h4>
-                        <div class="branch">
-                            <img src="./assets/img/marker.png" alt="Icon">
-                            <div>
-                                <h6>Công ty TNHH Tư vấn Đầu tư Xây dựng và Thương mại quốc tế TD</h6>
-                                <a href="tel:0934303668"
-                                    title="Công ty TNHH Tư vấn Đầu tư Xây dựng và Thương mại quốc tế TD">0934303668</a>
-                            </div>
-                        </div>
-                        <div class="branch">
-                            <img src="./assets/img/marker.png" alt="Icon">
-                            <div>
-                                <h6>Công ty CP Dầu tư và Phân phối Minh Phương</h6>
-                                <a href="tel:0913268868"
-                                    title="Công ty CP Dầu tư và Phân phối Minh Phương">0913268868</a>
-                            </div>
-                        </div>
-                        <div class="branch">
-                            <img src="./assets/img/marker.png" alt="Icon">
-                            <div>
-                                <h6>Công ty CP Recbook</h6>
-                                <a href="tel:0989186179" title="Công ty CP Recbook">0989186179</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4 partners">
+                    <div class="col-xl-4 col-lg-5 col-md-6 col-12 partners">
                         <h4>Đối tác liên kế</h4>
                         <div class="partner_grid">
                             <a href="#">
-                                <img src="./assets/img/partner/1.png" alt="Partner">
+                                <img class="img-fluid" src="./assets/img/partner/1.png" alt="Partner">
                             </a>
                             <a href="#">
-                                <img src="./assets/img/partner/2.png" alt="Partner">
+                                <img class="img-fluid" src="./assets/img/partner/2.png" alt="Partner">
                             </a>
                             <a href="#">
-                                <img src="./assets/img/partner/3.png" alt="Partner">
+                                <img class="img-fluid" src="./assets/img/partner/3.png" alt="Partner">
                             </a>
                             <a href="#">
-                                <img src="./assets/img/partner/4.png" alt="Partner">
+                                <img class="img-fluid" src="./assets/img/partner/4.png" alt="Partner">
                             </a>
                             <a href="#">
-                                <img src="./assets/img/partner/5.png" alt="Partner">
+                                <img class="img-fluid" src="./assets/img/partner/5.png" alt="Partner">
                             </a>
                             <a href="#">
-                                <img src="./assets/img/partner/6.png" alt="Partner">
+                                <img class="img-fluid" src="./assets/img/partner/6.png" alt="Partner">
                             </a>
                             <a href="#">
-                                <img src="./assets/img/partner/7.png" alt="Partner">
+                                <img class="img-fluid" src="./assets/img/partner/7.png" alt="Partner">
                             </a>
                             <a href="#">
-                                <img src="./assets/img/partner/8.png" alt="Partner">
+                                <img class="img-fluid" src="./assets/img/partner/8.png" alt="Partner">
                             </a>
                             <a href="#">
-                                <img src="./assets/img/partner/9.png" alt="Partner">
+                                <img class="img-fluid" src="./assets/img/partner/9.png" alt="Partner">
                             </a>
                             <a href="#">
-                                <img src="./assets/img/partner/10.png" alt="Partner">
+                                <img class="img-fluid" src="./assets/img/partner/10.png" alt="Partner">
                             </a>
                         </div>
                         <p>Hình ảnh và nội dung thông tin tài liệu bán hàng chỉ mang tính chất tương đối và có thể được
                             chỉnh sửa để đảm bảo phù hợp với quy hoạch và thực tế thi công dự án. Các thông tin chính
                             thước sẽ được quy định cụ thể tại Hợp đồng chính thức</p>
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 mt-3">
                         <div class="social_link">
                             <a href="#">
                                 <img src="./assets/img/fb.svg" alt="Social">
@@ -278,12 +286,9 @@
                                 <img src="./assets/img/inst.svg" alt="Social">
                             </a>
                         </div>
-                        <div class="group">
-                            <p>Một sản phẩm được đầu tư và phát triển bởi tập đoàn</p>
-                            <a href="#">
-                                <img src="./assets/img/hma.png" alt="Group">
-                            </a>
-                        </div>
+                        <p class="group">Một sản phẩm được đầu tư và phát triển bởi tập đoàn<a href="#">
+                            <img src="./assets/img/hma.png" alt="Group">
+                        </a></p>
                     </div>
                 </div>
             </div>
@@ -306,6 +311,7 @@
 
     <!-- Owl-Carousel Plugins -->
     <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/swiper.min.js"></script>
 
     <!-- Animated -->
     <script src="./assets/js/wow.min.js"></script>
@@ -314,8 +320,9 @@
     <script src="./assets/js/jquery.scrollUp.min.js"></script>
 
     <!-- main Jquery -->
+    <script src="./assets/js/jquery.fancybox.min.js"></script>
     <script src="./assets/js/main.js"></script>
-
+    
 </body>
 
 </html>

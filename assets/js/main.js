@@ -112,17 +112,14 @@
     items: 2,
     autoWidth: true,
     center: true,
-    // responsive:{
-    //     0:{
-    //         items:1
-    //     },
-    //     600:{
-    //         items:3
-    //     },
-    //     1000:{
-    //         items:2
-    //     }
-    // }
+    responsive:{
+      0:{
+        items:1
+      },
+      992:{
+        items:2
+      }
+    }
   });
 
   jQuery('.news_carousel').owlCarousel({
@@ -131,7 +128,7 @@
     dots: true,
     items: 3,
     responsive: {
-      992: {
+      1200: {
         items: 3,
       },
       576: {
